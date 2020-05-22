@@ -3,9 +3,7 @@ let db = require("../db/models");
 let controllerSerion = {
 
     index: function(req,res){
-
         res.render("home")
-
     },
 
     prueba: function(req, res) {
@@ -13,7 +11,11 @@ let controllerSerion = {
         .then(function(response) {
             res.send(response)
         })
-    }
+    },
+
+    detalle: function(req, res){
+        res.render("series")
+    },
 
 
 }
