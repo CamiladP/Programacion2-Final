@@ -17,7 +17,17 @@ let controllerSerion = {
         res.render("series")
     },
 
+    generos: function(req, res){
+        res.render("generos")
+    },
 
+    busquedaAvanzada: function(req, res){
+        res.render("busquedaAvanzada")
+    },
+
+    resultadoAvanzado: function(req, res){
+        res.render("resultadoAvanzado")
+    },
 }
 
 module.exports = controllerSerion
