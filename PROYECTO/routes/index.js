@@ -7,6 +7,14 @@ router.get('/', controllerSerion.index );
 
 router.get('/prueba', controllerSerion.prueba);
 
-router.get('/detalle', controllerSerion.detalle)
+router.get('/detalle', controllerSerion.detalle); 
+
+router.get('/generos', controllerSerion.generos);
+
+router.get('/resultadoAvanzado', controllerSerion.resultadoAvanzado);
+
+router.get('/busquedaAvanzada', controllerSerion.busquedaAvanzada)
+
+
 
 module.exports = router;
