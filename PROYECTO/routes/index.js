@@ -15,6 +15,14 @@ router.get('/resultadoAvanzado', controllerSerion.resultadoAvanzado);
 
 router.get('/busquedaAvanzada', controllerSerion.busquedaAvanzada);
 
-router.get('/registracion', controllerSerion.registracion)
+router.get('/registracion', controllerSerion.registracion);
+
+router.get('/buscadorUsuario', controllerSerion.buscadorUsuario);
+
+router.get('/detallesUsuario', controllerSerion.detallesUsuario);
+
+router.get('/resultadosUsuario', controllerSerion.resultadosUsuario);
+
+router.get('/resenias', controllerSerion.resenias)
 
 module.exports = router;
