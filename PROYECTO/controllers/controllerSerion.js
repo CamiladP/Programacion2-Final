@@ -31,6 +31,17 @@ let controllerSerion = {
     registracion: function(req, res){
         res.render("registracion")
     },
+
+    buscadorUsuarios: function(req, res){
+        res.render("buscadorUsuarios")
+    },
+    detallesUsuarios: function(req, res){
+        res.render("detallesUsuarios")
+    },
+
+   resultadosUsuarios: function(req, res){
+        res.render("resultadosUsuarios")
+    },
 }
 
 module.exports = controllerSerion
