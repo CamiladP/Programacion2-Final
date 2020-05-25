@@ -28,6 +28,9 @@ let controllerSerion = {
     resultadoAvanzado: function(req, res){
         res.render("resultadoAvanzado")
     },
+    registracion: function(req, res){
+        res.render("registracion")
+    },
 }
 
 module.exports = controllerSerion

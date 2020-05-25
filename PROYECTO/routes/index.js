@@ -13,8 +13,8 @@ router.get('/generos', controllerSerion.generos);
 
 router.get('/resultadoAvanzado', controllerSerion.resultadoAvanzado);
 
-router.get('/busquedaAvanzada', controllerSerion.busquedaAvanzada)
+router.get('/busquedaAvanzada', controllerSerion.busquedaAvanzada);
 
-
+router.get('/registracion', controllerSerion.registracion)
 
 module.exports = router;
