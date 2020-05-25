@@ -42,6 +42,9 @@ let controllerSerion = {
    resultadosUsuarios: function(req, res){
         res.render("resultadosUsuarios")
     },
+    resenias: function(req, res){
+        res.render("resenias")
+    },
 }
 
 module.exports = controllerSerion
