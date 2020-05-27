@@ -32,14 +32,14 @@ let controllerSerion = {
         res.render("registracion")
     },
 
-    buscadorUsuarios: function(req, res){
+    buscadorUsuario: function(req, res){
         res.render("buscadorUsuarios")
     },
-    detallesUsuarios: function(req, res){
+    detallesUsuario: function(req, res){
         res.render("detallesUsuarios")
     },
 
-   resultadosUsuarios: function(req, res){
+   resultadosUsuario: function(req, res){
         res.render("resultadosUsuarios")
     },
     resenias: function(req, res){
