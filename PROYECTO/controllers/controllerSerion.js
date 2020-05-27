@@ -28,8 +28,17 @@ let controllerSerion = {
     resultadoAvanzado: function(req, res){
         res.render("resultadoAvanzado")
     },
+
     registracion: function(req, res){
         res.render("registracion")
+    },
+    guardarRegistracion: function(req, res){
+        let registro = {
+            nombre: req.body.nombre,
+            email: req.body.email,
+            password: bcrypt.hashSync(req.body.contrasenia, 80),
+            nacimiento: req.body.fecha,
+        }
     },
 
     buscadorUsuario: function(req, res){

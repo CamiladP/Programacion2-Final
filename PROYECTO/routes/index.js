@@ -16,6 +16,7 @@ router.get('/resultadoAvanzado', controllerSerion.resultadoAvanzado);
 router.get('/busquedaAvanzada', controllerSerion.busquedaAvanzada);
 
 router.get('/registracion', controllerSerion.registracion);
+router.post('/registracion', controllerSerion.guardarRegistracion);
 
 router.get('/buscadorUsuario', controllerSerion.buscadorUsuario);
 
