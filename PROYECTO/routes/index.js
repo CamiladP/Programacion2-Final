@@ -21,7 +21,7 @@ router.get('/buscadorUsuario', controllerSerion.buscadorUsuario);
 
 router.get('/detallesUsuario', controllerSerion.detallesUsuario);
 
-router.get('/resultadosUsuario', controllerSerion.resultadosUsuario);
+router.get('/resultadosUsuarios', controllerSerion.resultadosUsuario);
 
 router.get('/resenias', controllerSerion.resenias)
 
