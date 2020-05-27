@@ -39,7 +39,7 @@ window.onload = function(){
       // console.log(array)
       for (serie of array) {
         var li = `
-       <a href="series.html?idPeli=`+ serie.id +`>
+       <a href="/series?idPeli=`+ serie.id +`>
           <li>
               <div class="uk-panel">
                   <img src="https://image.tmdb.org/t/p/original`+serie.poster_path+`" alt="">
@@ -69,7 +69,7 @@ window.onload = function(){
       console.log(array)
       for (serie of array) {
         var li = `
-       <a href="series.html?idPeli=`+ serie.id +`>
+       <a href="/series?idPeli=`+ serie.id +`>
           <li>
               <div class="uk-panel">
                   <img src="https://image.tmdb.org/t/p/original`+serie.poster_path+`" alt="">
@@ -96,7 +96,7 @@ fetch("https://api.themoviedb.org/3/tv/top_rated?api_key=a3f9467ae2c29b7ede89cca
   console.log(array)
   for (serie of array) {
     var li = `
-   <a href="series.html?idPeli=`+ serie.id +`>
+   <a href="/series?idPeli=`+ serie.id +`>
       <li>
           <div class="uk-panel">
               <img src="https://image.tmdb.org/t/p/original`+serie.poster_path+`" alt="">
@@ -167,7 +167,7 @@ fetch(URL_DETALLE)
 
  })
 
-// <li><a href="series.html?idGenre=00000&nameGenre=action">Action</a></li>
+// <li><a href="/series?idGenre=00000&nameGenre=action">Action</a></li>
 
 
 }

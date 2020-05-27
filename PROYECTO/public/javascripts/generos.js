@@ -18,7 +18,7 @@ fetch("https://api.themoviedb.org/3/discover/tv?api_key=a3f9467ae2c29b7ede89cca0
     for (var i = 0; i < arraySeries.length; i++) {
       var png = arraySeries[i].poster_path;
       var id = arraySeries[i].id
-      document.querySelector(".ul-fotos").innerHTML += "<li class="+"li-item"+ "tabindex="+"0"+"><a href=series.html?idPeli=" + id + "><img class="+"img-li"+" src=" + "https://image.tmdb.org/t/p/w185" +png+"></a>"
+      document.querySelector(".ul-fotos").innerHTML += "<li class="+"li-item"+ "tabindex="+"0"+"><a href=/series?idPeli=" + id + "><img class="+"img-li"+" src=" + "https://image.tmdb.org/t/p/w185" +png+"></a>"
     }
   })
   .catch(function(error) {
@@ -37,7 +37,7 @@ fetch("https://api.themoviedb.org/3/discover/tv?api_key=a3f9467ae2c29b7ede89cca0
       for (var i = 0; i < 8; i++) {
         var id = arrayDeMovies[i].id
         var png = arrayDeMovies[i].poster_path
-        document.querySelector("ul.uk-slider-items").innerHTML += "<li class="+"uk-transition-toggle"+ "tabindex="+"0"+"><a href=series.html?idPeli=" + id + "><img src=" + "https://image.tmdb.org/t/p/w500" +png+"></a><div class="+"uk-position-center uk-panel"+"><h1 class=" + "uk-transition-slide-bottom-small"+">1</h1></div></li>"
+        document.querySelector("ul.uk-slider-items").innerHTML += "<li class="+"uk-transition-toggle"+ "tabindex="+"0"+"><a href=/series?idPeli=" + id + "><img src=" + "https://image.tmdb.org/t/p/w500" +png+"></a><div class="+"uk-position-center uk-panel"+"><h1 class=" + "uk-transition-slide-bottom-small"+">1</h1></div></li>"
       }
 
     })
