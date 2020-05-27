@@ -7,7 +7,7 @@ router.get('/', controllerSerion.index );
 
 router.get('/prueba', controllerSerion.prueba);
 
-router.get('/detalle', controllerSerion.detalle); 
+router.get('/series', controllerSerion.detalle); 
 
 router.get('/generos', controllerSerion.generos);
 
