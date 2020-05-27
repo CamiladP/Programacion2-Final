@@ -8,6 +8,7 @@ router.get('/', controllerSerion.index );
 router.get('/prueba', controllerSerion.prueba);
 
 router.get('/series', controllerSerion.detalle); 
+router.post('/series', controllerSerion.guardarResenia);
 
 router.get('/generos', controllerSerion.generos);
 
@@ -16,6 +17,7 @@ router.get('/resultadoAvanzado', controllerSerion.resultadoAvanzado);
 router.get('/busquedaAvanzada', controllerSerion.busquedaAvanzada);
 
 router.get('/registracion', controllerSerion.registracion);
+
 router.post('/registracion', controllerSerion.guardarRegistracion);
 
 router.get('/buscadorUsuario', controllerSerion.buscadorUsuario);

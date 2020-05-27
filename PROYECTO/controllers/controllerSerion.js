@@ -16,6 +16,11 @@ let controllerSerion = {
     detalle: function(req, res){
         res.render("series")
     },
+    // guardarResenia: function(req,res){
+       // let resenias= {
+           // nombre:
+       // }
+   // },
 
     generos: function(req, res){
         res.render("generos")
@@ -33,12 +38,16 @@ let controllerSerion = {
         res.render("registracion")
     },
     guardarRegistracion: function(req, res){
-        let registro = {
+        let registro = { 
             nombre: req.body.nombre,
             email: req.body.email,
             password: bcrypt.hashSync(req.body.contrasenia, 80),
             nacimiento: req.body.fecha,
         }
+        db.Usuarios.create(registro)
+        .then(()=> {
+            res.send("usuario creado")
+        })
     },
 
     buscadorUsuario: function(req, res){
