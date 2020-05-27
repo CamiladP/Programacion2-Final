@@ -90,7 +90,7 @@ fetch("https://api.themoviedb.org/3/genre/tv/list?api_key=a3f9467ae2c29b7ede89cc
       var li;
 //estructura que va a linkear donde posicionarlos
       li = '<li>'
-      li += '<a href=Generos.html?idGenero=' + id + '&genero='+nombre+'>' + nombre + '</a>'
+      li += '<a href=/generos?idGenero=' + id + '&genero='+nombre+'>' + nombre + '</a>'
       li += '</li>'
 //estilo selector para los genros
       document.querySelector("ul.gen").innerHTML += li

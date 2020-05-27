@@ -22,7 +22,7 @@ window.onload = function(){
        var genero= serie.genres
        for (i=0; i< serie.length; i++) {
          serie.genres[i]
-         document.querySelector(".generoDetalle").innerHTML= "<a href='generos.html'>"+serie.genres[i].name+"</a>"
+         document.querySelector(".generoDetalle").innerHTML= "<a href='/generos'>"+serie.genres[i].name+"</a>"
    }
   })
   var url = "https://api.themoviedb.org/3/tv/{tv_id}/videos?api_key=a3f9467ae2c29b7ede89cca0ca14d893&language=en-US"

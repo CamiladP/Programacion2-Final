@@ -16,7 +16,7 @@ window.onload = function(){
         var li;
   //estructura que va a linkear donde posicionarlos
         li = '<li>'
-        li += '<a href=Generos.html?idGenero=' + id + '&genero='+nombre+'>' + nombre + '</a>'
+        li += '<a href=/generos?idGenero=' + id + '&genero='+nombre+'>' + nombre + '</a>'
         li += '</li>'
   //estilo selector para los genros
         document.querySelector("ul.gen").innerHTML += li
