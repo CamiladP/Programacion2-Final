@@ -62,7 +62,9 @@ body{
 color: white;
 font-family: sans-serif;
 font-size: 5em;
-margin-left: 3%;
+
+text-align: center;
+
 
 }
 .detalle-serie img{
@@ -77,24 +79,42 @@ margin-left: 3%;
 font-family: sans-serif;
 color: white;
 font-size: 2rem;
-margin-left: 3%;
+
 }
 .detalle-serie p{
   color: white;
   font-family: sans-serif;
   font-size: 20px;
-  margin-left: 3%;
+ 
 }
 .detalle-serie{
 width: 94%;
-margin-left: 3%;
+
 padding: 22px;
 margin-top: 70px;
 }
+/* estilos del formulario de resenia */
+
+.resenia{
+text-align: center;
 
 
+}
 /* estilos del body */
+h3{
 
+  text-align: center;
+  color:white;
+  font-family: sans-serif;
+  font-size: 20px;
+}
+h4{
+
+  text-align: center;
+  color:white;
+  font-family: sans-serif;
+  font-size: 15px;
+}
 
 /* estilos del footer */
 

@@ -60,25 +60,46 @@
   <div class="detalle-serie"> </div>
 
   <!--lugar para dejar reseñas-->
-<form action="/" method="POST" class="resenia"> 
-<input type="email" name="email" placeholder="Inserta tu mail">
-<input type="password" name="password" placeholder="Inserta tu contraseña">
-<input type="text" name="resenia" placeholder="Aquí escriba su reseña">
-<select name="puntaje" id="">
-  <option value="0">0</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>
-  <option value="8">8</option>
-  <option value="9">9</option>
-  <option value="10">10</option>
-</select>
-<button action="/series">submit</button>
+  <h3>DEJANOS TU RESEÑA!</h3>
+  <h4>COMPLETA LOS CAMPOS CORRESPONDIENTES</h4>
+
+  <form action="/" method="POST" class="resenia">
+    <fieldset class="uk-fieldset">
+
+      
+        <div class="uk-margin">
+            <input class="uk-input" type="email" placeholder="Inserta tu email">
+        </div>
+        <div class="uk-margin">
+        <input class="uk-input" type="password" name="password" placeholder="Inserta tu contraseña">
+      </div>
+
+      <div class="uk-margin">
+        <textarea class="uk-textarea" type="text" name="resenia" placeholder="Escribe tu reseña"></textarea>
+    </div>
+    <h3>ELIGE TU PUNTUACION</h3>
+        <div class="uk-margin">
+            <select class="uk-select" name="puntaje" id="">
+                
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+        </div>
+        
+    </fieldset>
+    <button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom" action="/series">Submit</button>
+
 </form>
+
     <!--Footer-->
         <footer>
           <div class="logo">
