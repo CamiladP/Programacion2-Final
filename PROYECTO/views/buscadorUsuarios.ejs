@@ -56,21 +56,25 @@
       </div>
   </nav>
   <!-- Esta es la barra de navegacion -->
-  <div class="hero">
-   
  
-    <div class="contenedorBuscador">
-      <h1>Encontra tu resultado</h1>
-        <form method="get" name="buscar" action="/resultadosUsuarios" class="buscar">
-            <input class="uk-search-input casillero" name="buscadorUsuarios" type="search" placeholder="Escribe tu email o nombre de usuario">
-            <span class="iconoBuscador" uk-search-icon></span>
-        </form>
-      </div>
+   
+ <div class="fondo"> 
+  <h1>ENCONTRA TU RESULTADO</h1>
+  <div class="formulario">
+  <form method="get" name="buscar" action="/resultadosUsuarios" class="buscar">
+    <fieldset class="uk-fieldset">
 
-      <p class="uk-text-right">
-        <a href="/resultadosUsuarios"><button  type="submit" name="button">Buscar</button></a>
-      </p>
-    </div>
+        <div class="uk-margin">
+            <input class="uk-input" type="search" placeholder="Escribe tu email o nombre de usuario">
+            <span class="iconoBuscador" uk-search-icon></span>
+
+            <a href="/resultadosUsuarios"><button class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom">Buscar</button></a>
+        </div>
+
+    </fieldset>
+</form>
+</div>
+  
       <!--Footer-->
       <footer>
         <div class="logo">
