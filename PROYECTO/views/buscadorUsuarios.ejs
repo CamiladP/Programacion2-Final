@@ -7,6 +7,18 @@
 </head>
 <body>
     <h1>Encontra tu resultado</h1>
+
+    <div class="contenedorBuscador">
+        <form method="get" name="buscar" action="/resultadosUsuarios" class="buscar">
+            <input class="uk-search-input casillero" name="buscadorUsuarios" type="search" placeholder="Escribe tu email o nombre de usuario">
+            <span class="iconoBuscador" uk-search-icon></span>
+        </form>
+      </div>
+
+      <p class="uk-text-right">
+        <a href="/resultadosUsuarios"><button  type="submit" name="button">Buscar</button></a>
+      </p>
     
+
 </body>
 </html>

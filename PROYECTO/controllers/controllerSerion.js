@@ -52,6 +52,14 @@ let controllerSerion = {
 
     buscadorUsuario: function(req, res){
         res.render("buscadorUsuarios")
+
+        const db = require("../db/models");
+        db.Usuarios.findAll({
+         // criterio por como se busca   where: []
+         
+        })
+        .then(resultados=>{console.log(resultados)})
+
     },
     detallesUsuario: function(req, res){
         res.render("detallesUsuarios")
