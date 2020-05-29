@@ -6,7 +6,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true,
         },
-        iderie: {type: dataTypes.INTEGER},
+        idserie: {type: dataTypes.INTEGER},
         idusuario: {type: dataTypes.INTEGER, foreignKey: true},
         texto: {type: dataTypes.STRING},
         fechacreacion: {type: dataTypes.DATE},
@@ -15,8 +15,8 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        tableName: "resenias",
-        timestamps: true,
+        tableName: "reseniasusuario",
+        timestamps: false,
     };
 
     const resenias = sequelize.define("resenias", cols, config);

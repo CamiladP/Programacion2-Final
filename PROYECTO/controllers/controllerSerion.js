@@ -1,5 +1,6 @@
 let db = require("../db/models");
-
+let login = require("./login");
+let bcrypt = require("bcryptjs");
 let controllerSerion = {
 
     index: function(req,res){
@@ -14,7 +15,8 @@ let controllerSerion = {
     },
 
     detalle: function(req, res){
-        res.render("series")
+        let idserie= req.query.idPeli
+        res.render("series", {idserie:idserie})
     },
     // guardarResenia: function(req,res){
        // let resenias= {
@@ -41,10 +43,10 @@ let controllerSerion = {
         let registro = { 
             nombre: req.body.nombre,
             email: req.body.email,
-            password: bcrypt.hashSync(req.body.contrasenia, 80),
+            password: bcrypt.hashSync(req.body.contrasenia, 10),
             nacimiento: req.body.fecha,
         }
-        db.Usuarios.create(registro)
+        db.usuarios.create(registro)
         .then(()=> {
             res.send("usuario creado")
         })
@@ -74,6 +76,34 @@ let controllerSerion = {
     resenias: function(req, res){
         res.render("resenias")
     },
+
+    guardarResenia: function(req, res){
+        login.validar(req.body.email, req.body.password)
+        .then (function(usuario){
+            let errores= []
+            if (usuario==null) {
+                errores.push ("te logiaste mal")
+            } 
+            // otros if para validar otra cosa
+            if (errores.length>0){
+                res.render("series",{errores:errores})
+            }
+            else {
+                let resenia = { 
+                    idserie: req.query.idPeli,
+                    idusuario: usuario.id,
+                    texto: req.body.resenia, 
+                    fechacreacion: db.sequelize.literal("CURRENT_DATE"),
+                    fechaactualizacion:db.sequelize.literal("CURRENT_DATE"),
+                    puntaje: req.body.puntaje
+                }
+                db.resenias.create(resenia)
+                .then (function(){
+                    res.send ("resenias creadas")
+                })
+            }
+        })
+    }
 }
 
 module.exports = controllerSerion

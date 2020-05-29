@@ -66,12 +66,12 @@
   <h3>DEJANOS TU RESEÑA!</h3>
   <h4>COMPLETA LOS CAMPOS CORRESPONDIENTES</h4>
 
-  <form action="/" method="POST" class="resenia">
+  <form action="/series?idPeli=<%=idserie%>" method="POST" class="resenia">
     <fieldset class="uk-fieldset">
 
       
         <div class="uk-margin">
-            <input class="uk-input" type="email" placeholder="Inserta tu email">
+            <input class="uk-input" type="email" name="email" placeholder="Inserta tu email">
         </div>
         <div class="uk-margin">
         <input class="uk-input" type="password" name="password" placeholder="Inserta tu contraseña">

@@ -8,7 +8,7 @@ router.get('/', controllerSerion.index );
 router.get('/prueba', controllerSerion.prueba);
 
 router.get('/series', controllerSerion.detalle); 
-//norouter.post('/series', controllerSerion.guardarResenia);
+router.post('/series', controllerSerion.guardarResenia);
 
 router.get('/generos', controllerSerion.generos);
 
