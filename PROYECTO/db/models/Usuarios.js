@@ -18,6 +18,10 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const usuarios = sequelize.define("usuarios", cols, config);
+
+    usuarios.associate = function(models){
+        usuarios.hasMany
+    }
     return usuarios;
 
 };

@@ -74,7 +74,7 @@ border: 1px solid gray;
 .buscadorAvanzado {
 
     height: 100vh;
-    background-image: url('./stylesheets/images/fondobuscador.jpg');
+    background-image: url('/images/fondobuscador.jpg');
     background-size: cover;
     background-repeat: none;
     display: flex;

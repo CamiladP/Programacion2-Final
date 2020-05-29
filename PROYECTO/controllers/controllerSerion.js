@@ -16,7 +16,7 @@ let controllerSerion = {
 
     detalle: function(req, res){
         let idserie= req.query.idPeli
-        res.render("series", {idserie:idserie})
+        res.render("series", {idserie:idserie, errores: false})
     },
     // guardarResenia: function(req,res){
        // let resenias= {
@@ -63,10 +63,10 @@ let controllerSerion = {
 
    resultadosUsuario: function(req, res){
         res.render("resultadosUsuarios")
-
-        const db = require("../db/models");
+        let user = req.query.busquedaUsuario
         db.Usuarios.findAll({
-         // criterio por como se busca   where: []
+         // criterio por como se busca   where: [] con el operador like where 
+         // es muy similiar a lo que tenemos que hacer para encontrar las resenias en el detalle
          
         })
         .then(resultados=>{console.log(resultados)})
@@ -82,41 +82,42 @@ let controllerSerion = {
         .then (function(usuario){
             let errores= []
             // validacion usuario
-            res.send(req.body)
-            if (usuario==null) {
+    
+         
+            if (usuario == null) {
                 errores.push ("Tu registro no se ha realizado correctamente")
             } 
-            res.send(req.body)
-            if (req.body.password== "") {
-                errores.push ("Tu contraseña es invalida")
-            } 
-            res.send(req.body)
-            if (text==null) {
-                errores.push ("No se ha completado el campo de texto")
-            } 
-            res.send(req.body)
-            if (puntuacion==null) {
-                errores.push ("No se ha completado el campo de puntuacion")
-            } 
-            res.send(req.body)
-            if (errores.length>0){
-                res.render("series",{errores:errores})
+           else {
+               // QUIEREN DECIR QUE EL USUARIO EXISTE Y LA PASS ES CORRECTA
+               if (req.body.resenia== null) {
+                   errores.push ("No se ha completado el campo de texto")
+               } 
+               if (req.body.puntaje== null) {
+                   errores.push ("No se ha completado el campo de puntuacion")
+                } 
             }
+               if (errores.length>0){
+                   //res.send(errores)
+                   res.render("series",{errores:errores, idserie: req.query.idPeli})
+               }
+    
+               else {
+                   let resenia = { 
+                       idserie: req.query.idPeli,
+                       idusuario: usuario.id,
+                       texto: req.body.resenia, 
+                       fechacreacion: db.sequelize.literal("CURRENT_DATE"),
+                       fechaactualizacion:db.sequelize.literal("CURRENT_DATE"),
+                       puntaje: req.body.puntaje
+                   }
+                   db.resenias.create(resenia)
+                   .then (function(){
+                       res.send ("resenias creadas")
+                   })
+               }
 
-            else {
-                let resenia = { 
-                    idserie: req.query.idPeli,
-                    idusuario: usuario.id,
-                    texto: req.body.resenia, 
-                    fechacreacion: db.sequelize.literal("CURRENT_DATE"),
-                    fechaactualizacion:db.sequelize.literal("CURRENT_DATE"),
-                    puntaje: req.body.puntaje
-                }
-                db.resenias.create(resenia)
-                .then (function(){
-                    res.send ("resenias creadas")
-                })
-            }
+
+            
         })
     }
 }

@@ -71,6 +71,15 @@
   <h3>TODAVIA NO LO CREASTE? <a href="/registracion">REGISTRATE HACIENDO CLICK ACA. </a></h3>
   <h4>COMPLETA LOS CAMPOS CORRESPONDIENTES</h4>
 
+  <div class="errores">
+    <% if(errores.length > 0) {%>
+      
+<% for (let i = 0; i < errores.length; i++) { %>
+  <p> <%= errores[i] %> </p>  
+<% } %>
+    <% } %>
+  </div>
+
   <form action="/series?idPeli=<%=idserie%>" method="POST" class="resenia">
     <fieldset class="uk-fieldset">
 
