@@ -74,20 +74,22 @@ fetch(URL_DETALLE)
    // cosas para meter en el html el contenido
    var detalleSerie = document.querySelector('.detalle-serie');
 
+   detalleSerie.innerHTML += "<h2>"+ data.name + "</h2>";
+  
    if (data.poster_path) {
      detalleSerie.innerHTML += '<img src="https://image.tmdb.org/t/p/w500/'+ data.poster_path + '">'
    }
-   detalleSerie.innerHTML += "<h2>"+ data.name + "</h2>";
+   
 
-   detalleSerie.innerHTML += "<h4>Sinopsis:</h4> <p>" + data.overview + "</p>";
+   detalleSerie.innerHTML += "<h4>SINOPSIS:</h4> <p>" + data.overview + "</p>";
 
-   detalleSerie.innerHTML += "<h4>Al aire desde:</h4> <p>" + data.first_air_date + "</p>";
-   detalleSerie.innerHTML += "<h4>Idioma Original:</h4> <p>"+ data.original_language + "</p> "
+   detalleSerie.innerHTML += "<h4>AL AIRE DESDE:</h4> <p>" + data.first_air_date + "</p>";
+   detalleSerie.innerHTML += "<h4>IDIOMA ORIGINAL:</h4> <p>"+ data.original_language + "</p> "
    if (data.genres == "undefined") {
 
    }
    else {
-     detalleSerie.innerHTML += "<h4>Genero:</h4><p>" + data.genres[1].name + "</p>";
+     detalleSerie.innerHTML += "<h4>GENERO:</h4><p>" + data.genres[1].name + "</p>";
    }
 
  })
