@@ -81,13 +81,28 @@ let controllerSerion = {
         login.validar(req.body.email, req.body.password)
         .then (function(usuario){
             let errores= []
+            // validacion usuario
+            res.send(req.body)
             if (usuario==null) {
-                errores.push ("te logiaste mal")
+                errores.push ("Tu registro no se ha realizado correctamente")
             } 
-            // otros if para validar otra cosa
+            res.send(req.body)
+            if (req.body.password== "") {
+                errores.push ("Tu contraseña es invalida")
+            } 
+            res.send(req.body)
+            if (text==null) {
+                errores.push ("No se ha completado el campo de texto")
+            } 
+            res.send(req.body)
+            if (puntuacion==null) {
+                errores.push ("No se ha completado el campo de puntuacion")
+            } 
+            res.send(req.body)
             if (errores.length>0){
                 res.render("series",{errores:errores})
             }
+
             else {
                 let resenia = { 
                     idserie: req.query.idPeli,
