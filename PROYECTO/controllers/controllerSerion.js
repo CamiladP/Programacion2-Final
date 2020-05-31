@@ -67,12 +67,19 @@ let controllerSerion = {
         db.Usuarios.findAll({
             where:{
 
+                [OP.or]:[
+                    {name:{[OP.like]:"%"+ busqueda + "%"}},
+                    {email:{[OP.like]:"%"+ busqueda + "%"}}
+                ]
             } 
+        // checkear esto
          // criterio por como se busca   where: [] con el operador like where 
          // es muy similiar a lo que tenemos que hacer para encontrar las resenias en el detalle
          
         })
-        .then(resultados=>{console.log(resultados)})
+        .then (function(resultado){
+            res.render("resultados", {resultado:resultado})
+        })
     },
 
 
