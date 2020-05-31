@@ -1,6 +1,7 @@
-let db = require("../db/models");
-let login = require("./login");
-let bcrypt = require("bcryptjs");
+let db = require("../db/models"); //agarra la base de datos
+let login = require("./login"); // requiere el modulo de log in
+let bcrypt = require("bcryptjs"); // comando para incriptar
+
 let controllerSerion = {
 
     index: function(req,res){
