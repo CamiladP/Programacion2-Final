@@ -65,6 +65,9 @@ let controllerSerion = {
         res.render("resultadosUsuarios")
         let user = req.query.busquedaUsuario
         db.Usuarios.findAll({
+            where:{
+
+            } 
          // criterio por como se busca   where: [] con el operador like where 
          // es muy similiar a lo que tenemos que hacer para encontrar las resenias en el detalle
          

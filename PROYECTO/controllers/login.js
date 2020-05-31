@@ -38,5 +38,6 @@ let moduloLogin = {
         })
     }
 }
+// nos falta la vista
 
 module.exports = moduloLogin;
