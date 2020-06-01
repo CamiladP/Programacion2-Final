@@ -120,7 +120,12 @@ let controllerSerion = {
 
      // Para los detalles de los usuarios
      detallesUsuario: function(req, res){
-        res.render("detallesUsuarios")
+         db.usuarios.findByPk(req.params.id)
+         .then(function(user){
+             res.render("detallesUsuarios", {
+                 usuario: user
+             })
+         })
     },
 
     resenias: function(req, res){
