@@ -6,9 +6,28 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Detalles</h1>
 
-        <!--Footer-->
+    <!-- Detalles del usuario y vinculadion con js y base de datos-->
+    <h1>Estas viendo el perfil de <%= usuario.nombre %></h1>
+    <br>
+    <ul>
+        <li>EMAIL: <%= usuario.email %></li>
+        <li>FECHA DE NACIMIENTO: <%= usuario.nacimiento %></li>
+        <li>GENERO FAVORITO: <%= usuario.genero %></li>
+    </ul>
+    <br>
+    <h4>Sus reseñas</h4>
+    <% if(resenia.length != 0) { %>
+        <% for(let i = 0; i < reviews.length; i++) { %>
+            <p>Resenia de la serie <%= resenia[i].idserie %>, con rating <%= resenia[i].puntaje %> </p>
+            <% } %>
+        <% } else { %>
+            <p>Este usuario no ha hecho ninguna resenia. </p>
+            <% } %>
+
+    
+    
+    <!--Footer-->
         <footer>
             <div class="logo">
               <img src="./images/serionlogo.jpg" alt="">
