@@ -1,6 +1,7 @@
 let db = require("../db/models"); //agarra la base de datos
 let login = require("./login"); // requiere el modulo de log in
 let bcrypt = require("bcryptjs"); // comando para incriptar
+let op = db.sequelize.op;
 
 let controllerSerion = {
 
@@ -101,26 +102,22 @@ let controllerSerion = {
     },
 
     // Para los resultados de los usuarios
-    resultadosUsuario: function(req, res){
-        res.render("resultadosUsuarios")
-        let user = req.query.busquedaUsuario
-        db.Usuarios.findAll({
-            where:{
-
-                [OP.or]:[
-                    {name:{[OP.like]:"%"+ busqueda + "%"}},
-                    {email:{[OP.like]:"%"+ busqueda + "%"}}
-                ]
-            } 
-        // checkear esto
-         // criterio por como se busca   where: [] con el operador like where 
-         // es muy similiar a lo que tenemos que hacer para encontrar las resenias en el detalle
-         
+    resultadosUsuario: function(req, res) {
+        db.usuarios.findAll({
+            where: {
+                [op.or]: {
+                    email: {[op.like]: "%" + req.body.resultadosUsuario + "%"},
+                    nombre: {[op.like]: "%" + req.body.resultadosUsuario + "%"}
+                }
+            }
         })
-        .then (function(resultado){
-            res.render("resultados", {resultado:resultado})
+        .then(function(resultado){
+            res.render("resultadosUsuarios", {
+                usuarios: resultado
+            })
         })
     },
+
      // Para los detalles de los usuarios
      detallesUsuario: function(req, res){
         res.render("detallesUsuarios")
