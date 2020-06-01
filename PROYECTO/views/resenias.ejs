@@ -4,10 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script rel="stylesheet" src="./javascripts/login.js"></script>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href="./stylesheets/resenias.css">
 </head>
 <body>
+  
+  <div class="fondo">
     <div class="resenias">
-    <h1>Reseñas</h1>
+    <h1> Mis Reseñas</h1>
     <% if(resenias.length > 0) {%>
       <p>Usuario: <%= resenias[0].usuario.nombre %> </p> 
     <% for (let i = 0; i < resenias.length; i++) { %>
@@ -21,6 +31,7 @@
 </form>
 <% } %>
   <% } %>
+</div>
 </div>
 </body>
 </html>
