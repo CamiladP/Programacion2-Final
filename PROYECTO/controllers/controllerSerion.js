@@ -89,6 +89,7 @@ let controllerSerion = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.contrasenia, 10),
             nacimiento: req.body.fecha,
+            genero: req.body.genero,
         }
         db.usuarios.create(registro)
         .then(()=> {
@@ -122,8 +123,16 @@ let controllerSerion = {
      detallesUsuario: function(req, res){
          db.usuarios.findByPk(req.params.id)
          .then(function(user){
-             res.render("detallesUsuarios", {
-                 usuario: user
+             db.resenias.findAll({
+                 where: {
+                     idusuario: user.id
+                 }
+             })
+             .then(function(resultados){
+                res.render("detallesUsuarios", {
+                    usuario: user,
+                    resenia: resultados,
+                })
              })
          })
     },
