@@ -27,7 +27,12 @@ router.get('/detallesUsuario', controllerSerion.detallesUsuario);
 
 router.get('/resultadosUsuarios', controllerSerion.resultadosUsuario);
 
-router.get('/resenias', controllerSerion.resenias);
+router.get('/resenias/:id', controllerSerion.listadoResenias);
+
+router.get('/resenias', controllerSerion.login);
+
+router.post('/resenias', controllerSerion.confirmaLogin);
+
 router.post('/eliminarResenia', controllerSerion.eliminarResenia);
 
 

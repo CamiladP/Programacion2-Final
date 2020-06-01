@@ -15,6 +15,40 @@ let controllerSerion = {
         })
     },
 
+    login: function(req,res){
+        res.render("login")
+    },
+
+    confirmaLogin: function(req,res){
+        login.validar(req.body.email, req.body.password)
+        .then (resultado =>{
+            if(resultado == undefined){
+                res.redirect("/resenias")
+            } else{
+                console.log(resultado.id);
+            res.redirect("/resenias/"+ resultado.id)        
+            }
+        })
+    },
+
+    listadoResenias: function(req,res){
+        let idusuario = req.params.id
+            db.resenias.findAll({
+                where:{
+                    idusuario:idusuario
+                },
+                include: {
+                    model: db.usuarios,
+                    as: 'usuario',
+                }
+            })
+            .then(function(resenias){
+                console.log(idusuario, resenias);
+                
+                res.render("resenias",{resenias:resenias})
+            } )
+    },
+
     detalle: function(req, res){
         let idserie= req.query.idPeli
         db.resenias.findAll({
