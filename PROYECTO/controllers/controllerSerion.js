@@ -112,7 +112,9 @@ let controllerSerion = {
             }
         })
         .then(function(resultado){
-            res.send(resultado)
+            res.render("resultadosUsuarios", {
+                usuario: resultado
+            })
         })
     },
 

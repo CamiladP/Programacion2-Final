@@ -60,8 +60,23 @@
       </div>
   </nav>
   <!-- Esta es la barra de navegacion -->
+
+<!-- RESULTADOS-->
 <div class="fondo">
+
   <h1>Tu resultado!</h1>
+
+  <!-- VINCULACION CON JS PARA MOSTRAR RESULTADO-->
+  <% if(usuario.length != 0) { %>
+    <% for(let i=0; i < usuario.lenght; i++) { %>
+      <a href="/detallesUsuario"> NOMBRE: <%= usuario[i].nombre %> 
+        | EMAIL: <%= usuario[i].email %> </a>
+    <% } %>
+  <% } else { %>
+    <h3>No hay resultados para tu busqueda :( </h3>
+  <% } %>
+
+
 
 </div>
 <br>
