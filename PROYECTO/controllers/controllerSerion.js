@@ -95,16 +95,13 @@ let controllerSerion = {
         })
     },
 
+    // Para buscar usuarios
     buscadorUsuario: function(req, res){
         res.render("buscadorUsuarios")
-
-
-    },
-    detallesUsuario: function(req, res){
-        res.render("detallesUsuarios")
     },
 
-   resultadosUsuario: function(req, res){
+    // Para los resultados de los usuarios
+    resultadosUsuario: function(req, res){
         res.render("resultadosUsuarios")
         let user = req.query.busquedaUsuario
         db.Usuarios.findAll({
@@ -124,7 +121,10 @@ let controllerSerion = {
             res.render("resultados", {resultado:resultado})
         })
     },
-
+     // Para los detalles de los usuarios
+     detallesUsuario: function(req, res){
+        res.render("detallesUsuarios")
+    },
 
     resenias: function(req, res){
         res.render("resenias")
