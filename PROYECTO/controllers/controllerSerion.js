@@ -125,7 +125,7 @@ let controllerSerion = {
          .then(function(user){
              db.resenias.findAll({
                  where: {
-                     idusuario: user.id
+                     id: user.id
                  }
              })
              .then(function(resultados){
