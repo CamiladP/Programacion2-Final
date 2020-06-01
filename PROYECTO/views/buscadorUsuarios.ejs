@@ -78,11 +78,11 @@
   <br>
   <h1>ENCONTRA TU RESULTADO</h1>
   <div class="formulario">
-  <form method="get" name="buscar" action="/resultadosUsuarios" class="buscar">
+  <form method="post" name="buscar" action="/resultadosUsuarios" class="buscar">
     <fieldset class="uk-fieldset">
 
         <div class="uk-margin">
-            <input class="uk-input" type="search" name="busquedaUsuario" placeholder="Escribe tu email o nombre de usuario">
+            <input class="uk-input" type="text" name="busquedaUsuario" placeholder="Escribe el email o nombre de usuario">
             <span class="iconoBuscador" uk-search-icon></span>
 
           <button type="submit" class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom">Buscar</button>

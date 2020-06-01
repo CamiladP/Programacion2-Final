@@ -1,7 +1,7 @@
 let db = require("../db/models"); //agarra la base de datos
 let login = require("./login"); // requiere el modulo de log in
 let bcrypt = require("bcryptjs"); // comando para incriptar
-let op = db.sequelize.op;
+let op = db.Sequelize.Op;
 
 let controllerSerion = {
 
@@ -106,15 +106,13 @@ let controllerSerion = {
         db.usuarios.findAll({
             where: {
                 [op.or]: {
-                    email: {[op.like]: "%" + req.body.resultadosUsuario + "%"},
-                    nombre: {[op.like]: "%" + req.body.resultadosUsuario + "%"}
+                    email: {[op.like]: "%" + req.body.busquedaUsuario + "%"},
+                    nombre: {[op.like]: "%" + req.body.busquedaUsuario + "%"}
                 }
             }
         })
         .then(function(resultado){
-            res.render("resultadosUsuarios", {
-                usuarios: resultado
-            })
+            res.send(resultado)
         })
     },
 
