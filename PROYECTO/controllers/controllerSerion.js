@@ -17,13 +17,21 @@ let controllerSerion = {
 
     detalle: function(req, res){
         let idserie= req.query.idPeli
-        res.render("series", {idserie:idserie, errores: false})
+        db.resenias.findAll({
+            where: {
+                idserie: idserie,
+            },
+            include: {
+                model: db.usuarios,
+                as: 'usuario',
+            }
+        })
+            .then(function(resenias) {
+                console.log(idserie, resenias);
+
+                res.render("series", {idserie:idserie, errores: false, resenias: resenias})
+            })
     },
-    // guardarResenia: function(req,res){
-       // let resenias= {
-           // nombre:
-       // }
-   // },
 
     generos: function(req, res){
         res.render("generos")
@@ -87,24 +95,35 @@ let controllerSerion = {
     resenias: function(req, res){
         res.render("resenias")
     },
-
+    eliminarResenia: function(req, res) {
+        let idserie= req.query.idPeli
+        const idresenia = req.body.idresenia;
+        db.resenias.destroy({
+            where: {
+                id: idresenia
+            }
+        }).then(function () {
+            res.redirect('/series?idPeli=' + idserie);
+        });
+    },
     guardarResenia: function(req, res){
         login.validar(req.body.email, req.body.password)
         .then (function(usuario){
             let errores= []
             // validacion usuario
+            console.log(req.body)
     
          
-            if (usuario == null) {
+            if (!usuario) {
                 errores.push ("Tu registro no se ha realizado correctamente")
             } 
-           else {
-               // QUIEREN DECIR QUE EL USUARIO EXISTE Y LA PASS ES CORRECTA
-               if (req.body.resenia== null) {
-                   errores.push ("No se ha completado el campo de texto")
-               } 
-               if (req.body.puntaje== null) {
-                   errores.push ("No se ha completado el campo de puntuacion")
+            else {
+                // QUIEREN DECIR QUE EL USUARIO EXISTE Y LA PASS ES CORRECTA
+                if (!req.body.resenia) {
+                    errores.push ("No se ha completado el campo de texto")
+                } 
+                if (!req.body.puntaje) {
+                    errores.push ("No se ha completado el campo de puntuacion")
                 } 
             }
                if (errores.length>0){
@@ -123,7 +142,7 @@ let controllerSerion = {
                    }
                    db.resenias.create(resenia)
                    .then (function(){
-                       res.send ("resenias creadas")
+                        res.redirect('/series?idPeli=' + req.query.idPeli);
                    })
                }
 

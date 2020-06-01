@@ -6,6 +6,24 @@
     <title>Document</title>
 </head>
 <body>
+<<<<<<< HEAD
     <h1>Mis Reseñas</h1>
+=======
+    <div class="resenias">
+    <h1>Reseñas</h1>
+    <% if(resenias.length > 0) {%>
+    <% for (let i = 0; i < resenias.length; i++) { %>
+        <p>Usuario: <%= resenias[i].usuario.nombre %> </p>  
+        <p>Puntaje: <%= resenias[i].puntaje %> </p>  
+        <p> <%= resenias[i].texto %> </p>  
+        
+<form action="/eliminarResenia?idPeli=<%=idserie%>" method="POST">
+  <input type="hidden" name="idresenia" value="<%= resenias[i].id %>" />
+  <button type="submit">Eliminar</button>
+</form>
+<% } %>
+  <% } %>
+</div>
+>>>>>>> master
 </body>
 </html>
