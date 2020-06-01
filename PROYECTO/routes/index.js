@@ -27,6 +27,8 @@ router.get('/detallesUsuario', controllerSerion.detallesUsuario);
 
 router.get('/resultadosUsuarios', controllerSerion.resultadosUsuario);
 
-router.get('/resenias', controllerSerion.resenias)
+router.get('/resenias', controllerSerion.resenias);
+router.post('/eliminarResenia', controllerSerion.eliminarResenia);
+
 
 module.exports = router;
