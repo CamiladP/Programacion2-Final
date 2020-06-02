@@ -23,7 +23,7 @@ router.post('/registracion', controllerSerion.guardarRegistracion);
 
 router.get('/buscadorUsuarios', controllerSerion.buscadorUsuario);
 
-router.get('/detallesUsuario', controllerSerion.detallesUsuario);
+router.get('/detallesUsuario/:id', controllerSerion.detallesUsuario);
 
 router.post('/resultadosUsuarios', controllerSerion.resultadosUsuario);
 
