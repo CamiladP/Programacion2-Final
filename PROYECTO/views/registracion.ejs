@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />
     <!--UIkit CSS-->
     <script rel="stylesheet" src="./javascripts/series.js"></script>
-    <link rel="stylesheet" href="./css/series.css">
+    <link rel="stylesheet" href="./stylesheets/registracion.css">
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="./stylesheets/series.css">
+    <link rel="stylesheet" href="./stylesheets/registracion.css">
     <link rel="stylesheet" href="./css/uikit.min.css">
     <link rel="stylesheet" href="./js/uikit.min.js">
     <link rel="stylesheet" href="./js/uikit-icons.js">
@@ -59,26 +59,47 @@
           </div>
       </nav>
       <!-- Esta es la barra de navegacion -->
+      <div class="fondo">
+    <h1>CREA TU USUARIO</h1>
 
-    <h1>Crea tu usuario!</h1>
+    <form action="/registracion" method="POST" class="formulario">
 
-    <form action="/registracion" method="POST" class="registro">
+      <div class="uk-margin">
 
-          <label for="">Nombre</label>
-            <input type="text" placeholder="JuanPerez" name="nombre" >
-          <label for="">Email</label>
-            <input type="email" placeholder="ejemplo@serion.com" name= "email" >
-          <label for="">Contraseña</label>
-            <input type="password" placeholder="..." name="contrasenia" >
-          <label for="">Fecha de nacimiento</label>
-            <input type="date" placeholder="dd/mm/aaaa" name="fecha" >
-          <label for="">Cual es tu genero favorito?</label>
-            <input type="text" name="genero" id="" placeholder="Drama">
+          <label class="etiqueta" for="form-stacked-text">Nombre</label>
+          <div class="uk-form-controls">
+              <input class="uk-input" id="form-stacked-text" type="text" placeholder="Juan Perez" name="nombre">
+          </div>
+<br>
 
-<input type="submit" value="enviar">
-    </form>
+          <label class="etiqueta" for="form-stacked-text">Email</label>
+          <div class="uk-form-controls">
+              <input class="uk-input" id="form-stacked-text" type="email" placeholder="ejemplo@serion.com" name="email">
+          </div>
+          <br>
+          <label class="etiqueta" for="form-stacked-text">Contraseña</label>
+          <div class="uk-form-controls">
+              <input class="uk-input" id="form-stacked-text" type="password" placeholder="..." name="contrasenia">
+          </div>
+          <br>
+          <label class="etiqueta" for="form-stacked-text">Fecha de Nacimiento</label>
+          <div class="uk-form-controls">
+              <input class="uk-input" id="form-stacked-text" type="date" placeholder="dd/mm/aaaa" name="fecha">
+          </div>
+          <br>
+          <label class="etiqueta" for="form-stacked-text">Cual es tu genero favorito?</label>
+          <div class="uk-form-controls">
+              <input class="uk-input" id="form-stacked-text" type="text" placeholder="Drama" name="genero">
+          </div>
+          <br>
+      </div>
+      
+     <div class="boton"> <input type="submit" value="Enviar"></div>
+    
+  </form>
 
 
+</div>
 
 
 <!--Footer-->
