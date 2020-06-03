@@ -93,7 +93,7 @@ let controllerSerion = {
         }
         db.usuarios.create(registro)
         .then(()=> {
-            res.send("usuario creado")
+            res.render("usuarioCreado")
         })
     },
 
