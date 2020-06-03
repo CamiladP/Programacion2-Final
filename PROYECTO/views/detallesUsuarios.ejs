@@ -18,8 +18,8 @@
     <br>
     <h4>Sus reseñas</h4>
     <% if(resenia.length != 0) { %>
-        <% for(let i = 0; i < reviews.length; i++) { %>
-            <p>Resenia de la serie <%= resenia[i].idserie %>, con rating <%= resenia[i].puntaje %> </p>
+        <% for(let i = 0; i < resenia.length; i++) { %>
+            <p>Resenia de la serie <%= resenia[i].idserie %>, con rating <%= resenia[i].puntaje %> . Su reseña es "<%= resenia[i].texto %>" </p>
             <% } %>
         <% } else { %>
             <p>Este usuario no ha hecho ninguna resenia. </p>
