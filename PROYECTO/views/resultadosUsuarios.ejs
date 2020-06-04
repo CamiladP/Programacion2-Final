@@ -72,9 +72,15 @@
   <!-- VINCULACION CON JS PARA MOSTRAR RESULTADO-->
   <% if(usuario.length != 0) { %>
     <% for(let i=0; i < usuario.length; i++) { %>
-     <div class="hipervinculo"> <a href="/detallesUsuario/<%=usuario[i].id%>"> NOMBRE: <%= usuario[i].nombre %> </div>
-        | EMAIL: <%= usuario[i].email %> </a>
-    <% } %>
+     <div class="hipervinculo"> 
+      <ul>
+        <li>
+          <a href="/detallesUsuario/<%=usuario[i].id%>"> NOMBRE: <%= usuario[i].nombre %> </div>
+            | EMAIL: <%= usuario[i].email %> </a>
+        <% } %>
+        </li>
+      </ul> 
+      
   <% } else { %>
     <h3>No hay resultados para tu busqueda :( </h3>
   <% } %>
