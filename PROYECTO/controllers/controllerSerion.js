@@ -83,6 +83,8 @@ let controllerSerion = {
     registracion: function(req, res){
         res.render("registracion")
     },
+
+
     guardarRegistracion: function(req, res){
         let registro = { 
             nombre: req.body.nombre,
@@ -151,6 +153,7 @@ let controllerSerion = {
             res.redirect('/series?idPeli=' + idserie);
         });
     },
+    
     guardarResenia: function(req, res){
         login.validar(req.body.email, req.body.password)
         .then (function(usuario){
