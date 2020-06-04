@@ -158,7 +158,6 @@ let controllerSerion = {
             // validacion usuario
             console.log(req.body)
     
-         
             if (!usuario) {
                 errores.push ("Tu registro no se ha realizado correctamente")
             } 
