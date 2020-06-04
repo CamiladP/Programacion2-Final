@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />
 <!--UIkit CSS-->
 <script rel="stylesheet" src="./javascripts/series.js"></script>
-<link rel="stylesheet" href="../public/stylesheets/resultadoUsuarios.css">
+<link rel="stylesheet" href="./stylesheets/resultadoUsuarios.css">
     <!--UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="./stylesheets/series.css">
+    <link rel="stylesheet" href="./stylesheets/resultadoUsuarios.css">
     <link rel="stylesheet" href="./css/uikit.min.css">
     <link rel="stylesheet" href="./js/uikit.min.js">
     <link rel="stylesheet" href="./js/uikit-icons.js">
@@ -49,6 +49,9 @@
               <li class="li-line">
                 <a class="li-a" href="/registracion">Registrate</a>
               </li>
+              <li class="li-line">
+                <a class="li-a" href="/resenias">Mis Reseñas</a>
+              </li>
           </ul>
       </div>
       <div class="contenedorBuscador">
@@ -69,9 +72,15 @@
   <!-- VINCULACION CON JS PARA MOSTRAR RESULTADO-->
   <% if(usuario.length != 0) { %>
     <% for(let i=0; i < usuario.length; i++) { %>
-      <a href="/detallesUsuario/<%=usuario[i].id%>"> NOMBRE: <%= usuario[i].nombre %> 
-        | EMAIL: <%= usuario[i].email %> </a>
-    <% } %>
+     <div class="hipervinculo"> 
+      <ul>
+        <li>
+          <a href="/detallesUsuario/<%=usuario[i].id%>"> NOMBRE: <%= usuario[i].nombre %> </div>
+            | EMAIL: <%= usuario[i].email %> </a>
+        <% } %>
+        </li>
+      </ul> 
+      
   <% } else { %>
     <h3>No hay resultados para tu busqueda :( </h3>
   <% } %>
@@ -79,25 +88,7 @@
 
 
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
     
     <!--Footer-->
     <footer>

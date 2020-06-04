@@ -50,42 +50,26 @@
       height: 8vh;
   }
   /*fin del header */
-    /*inicio body */
 
-
-    .fondo{
-        height: 100vh;
-        background-image: url('../images/fondobuscador.jpg');
-        background-size: cover;
-        background-repeat: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    
-     h1{
-        color: white;
-    font-family: sans-serif;
-    font-size: 3em;
-    font-weight: bold;
-    align-content: center;
-    text-align: center;
-    }
-
-    .formulario{
-        align-content: center;
-        }
-
-.etiqueta{
-    align-content: center;
-    color: white;
-    font-family: sans-serif;
-    text-align: justify;
-    font-weight: bold;
+  .fondo{
+    height: 100vh;
+    background-image: url('../images/fondobuscador.jpg');
+    background-size: cover;
+    background-repeat: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-    /*fin body */
 
+ h1{
+    color: white;
+font-family: sans-serif;
+font-size: 3em;
+font-weight: bold;
+align-content: center;
+text-align: center;
+}
   /* estilos del footer */
 
 footer{
@@ -111,4 +95,3 @@ footer{
   .logo{
     margin-left: 20px;
   }
-  

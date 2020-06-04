@@ -11,15 +11,61 @@
     <!-- UIkit JS -->
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href="./stylesheets/resenias.css">
+    <link rel="stylesheet" href="../stylesheets/resenias.css">
 </head>
 <body>
-  
+  <!-- Esta es la barra de navegacion -->
+  <nav class="uk-navbar-container" uk-navbar>
+    <div class="contenedorTitulos">
+      <div class="uk-navbar-left">
+          <ul class="uk-navbar-nav">
+              <li class="uk-active"><a href='/'><img class="nav-logo" src="../images/serionlogo.jpg"></a></li>
+          </ul>
+      </div>
+      <div class="uk-navbar-center">
+          <ul class="uk-navbar-nav">
+            <li class="li-line">
+              <a class="li-a" href='/'>Home</a>
+            </li>
+              <li  class="li-line">
+                  <a class="li-a" href="#">Generos</a>
+                  <div class="uk-navbar-dropdown">
+                      <ul class="uk-nav uk-navbar-dropdown-nav gen">
+                      </ul>
+                  </div>
+              </li>
+
+              <li class="li-line">
+                <a class="li-a" href="/busquedaAvanzada">Buscador Avanzado</a>
+              </li>
+              <li class="li-line">
+                <a class="li-a" href="/buscadorUsuarios">Buscador de Usuarios</a>
+              </li>
+              <li class="li-line">
+                <a class="li-a" href="/registracion">Registrate</a>
+              </li>
+              <li class="li-line">
+                <a class="li-a" href="/resenias">Mis Reseñas</a>
+              </li>
+          </ul>
+      </div>
+      <div class="contenedorBuscador">
+        <form method="get" name="buscar" action="buscador.html" class="buscar">
+              <input class="uk-search-input casillero" name="buscador" type="search" placeholder="Search...">
+              <span class="iconoBuscador" uk-search-icon></span>
+          </form>
+      </div>
+      </div>
+  </nav>
+  <!-- Esta es la barra de navegacion -->
+
   <div class="fondo">
     <div class="resenias">
-    <h1> Mis Reseñas</h1>
+      <br>
+     
+    <h1> MIS RESEÑAS</h1>
     <% if(resenias.length > 0) {%>
-      <p>Usuario: <%= resenias[0].usuario.nombre %> </p> 
+      <h2>Usuario: <%= resenias[0].usuario.nombre %> </h2>
     <% for (let i = 0; i < resenias.length; i++) { %>
          
         <p>Puntaje: <%= resenias[i].puntaje %> </p>  
@@ -27,11 +73,23 @@
         
 <form action="/eliminarResenia?idPeli=<%=resenias[i].idserie%>" method="POST">
   <input type="hidden" name="idresenia" value="<%= resenias[i].id %>" />
-  <button type="submit">Eliminar</button>
+ <div class="botones"> <button type="submit">Eliminar</button></div>
 </form>
 <% } %>
   <% } %>
 </div>
 </div>
+   <!--Footer-->
+   <footer>
+    <div class="logo">
+      <img src="../images/293x302-powered-by-square-green-3ee4814bb59d8260d51efdd7c124383540fc04ca27d23eaea3a8c87bfa0f388d.png" alt="">
+    </div>
+
+     <p>Camila de Paul</p>
+     <p>Lola Marotta</p>
+     <p>Macarena Montoya</p>
+
+  </footer>
+  <!--FIN Footer-->
 </body>
 </html>
