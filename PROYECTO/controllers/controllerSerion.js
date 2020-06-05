@@ -178,8 +178,23 @@ let controllerSerion = {
                 } 
             }
                if (errores.length>0){
-                   //res.send(errores)
-                   res.render("series",{errores:errores, idserie: req.query.idPeli})
+                   //res.send(errores)  
+                   
+                   db.resenias.findAll({
+            where: {
+                idserie: req.query.idPeli
+            },
+            include: {
+                model: db.usuarios,
+                as: 'usuario',
+            }
+        })
+            .then(function(resenias) {
+                
+
+                res.render("series", {idserie: req.query.idPeli, errores: errores, resenias: resenias})
+            })
+                 
                }
     
                else {
