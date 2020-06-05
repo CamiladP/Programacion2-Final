@@ -143,6 +143,9 @@ let controllerSerion = {
         res.render("resenias")
     },
     eliminarResenia: function(req, res) {
+        //return res.send(req.body)
+        // 1. validar al usuario
+        // 2. borrar la reseña
         let idserie= req.query.idPeli
         const idresenia = req.body.idresenia;
         db.resenias.destroy({
@@ -196,7 +199,13 @@ let controllerSerion = {
 
             
         })
+    },
+    formularioBorrarResena: (req, res) => {
+        return res.render('borrarResenaForm', {
+            idResenia: req.params.id
+        })
     }
+
 }
 
 module.exports = controllerSerion

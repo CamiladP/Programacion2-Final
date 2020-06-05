@@ -70,6 +70,7 @@
          
         <p>Puntaje: <%= resenias[i].puntaje %> </p>  
         <p> <%= resenias[i].texto %> </p>  
+        <a href="/eliminarResenia/<%=resenias[i].id%>">Eliminar</a>
         
 <form action="/eliminarResenia?idPeli=<%=resenias[i].idserie%>" method="POST">
   <input type="hidden" name="idresenia" value="<%= resenias[i].id %>" />
