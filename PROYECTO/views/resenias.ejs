@@ -67,10 +67,10 @@
     <% if(resenias.length > 0) {%>
       <h2>Usuario: <%= resenias[0].usuario.nombre %> </h2>
     <% for (let i = 0; i < resenias.length; i++) { %>
-         
         <p>Puntaje: <%= resenias[i].puntaje %> </p>  
         <p> <%= resenias[i].texto %> </p>  
         <a href="/eliminarResenia/<%=resenias[i].id%>">Eliminar</a>
+        
         
 <form action="/eliminarResenia?idPeli=<%=resenias[i].idserie%>" method="POST">
   <input type="hidden" name="idresenia" value="<%= resenias[i].id %>" />

@@ -143,8 +143,9 @@ let controllerSerion = {
         res.render("resenias")
     },
     eliminarResenia: function(req, res) {
-        //return res.send(req.body)
         // 1. validar al usuario
+        login.validar(req.body.email, req.body.password)
+        console.log(req.body.formularioBorrarResena)
         // 2. borrar la reseña
         let idserie= req.query.idPeli
         const idresenia = req.body.idresenia;
@@ -162,7 +163,7 @@ let controllerSerion = {
         .then (function(usuario){
             let errores= []
             // validacion usuario
-            console.log(req.body)
+            console.log(req.body.formularioBorrarResena)
     
             if (!usuario) {
                 errores.push ("Tu registro no se ha realizado correctamente")

@@ -10,7 +10,6 @@ router.get('/prueba', controllerSerion.prueba);
 router.get('/series', controllerSerion.detalle); 
 router.post('/series', controllerSerion.guardarResenia);
 
-
 router.get('/generos', controllerSerion.generos);
 
 router.get('/resultadoAvanzado', controllerSerion.resultadoAvanzado);
