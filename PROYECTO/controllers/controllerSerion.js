@@ -145,17 +145,22 @@ let controllerSerion = {
     eliminarResenia: function(req, res) {
         // 1. validar al usuario
         login.validar(req.body.email, req.body.password)
-        console.log(req.body.formularioBorrarResena)
-        // 2. borrar la reseña
-        let idserie= req.query.idPeli
-        const idresenia = req.body.idresenia;
-        db.resenias.destroy({
-            where: {
-                id: idresenia
+        .then(function(user){
+            if (user){
+                const idresenia = req.params.id;
+                db.resenias.destroy({
+                    where: {
+                        id: idresenia
+                    }
+                }).then(function () {
+                    res.redirect('/resenias');
+                });
             }
-        }).then(function () {
-            res.redirect('/series?idPeli=' + idserie);
-        });
+           // else{
+                       
+           // }
+            
+        })
     },
     
     guardarResenia: function(req, res){
