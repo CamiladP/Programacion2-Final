@@ -33,6 +33,7 @@ router.get('/resenias', controllerSerion.login);
 router.post('/resenias', controllerSerion.confirmaLogin);
 
 router.get('/eliminarResenia/:id', controllerSerion.formularioBorrarResena);
+
 router.post('/eliminarResenia/:id', controllerSerion.eliminarResenia);
 
 

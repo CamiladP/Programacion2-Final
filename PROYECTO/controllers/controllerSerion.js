@@ -156,9 +156,9 @@ let controllerSerion = {
                     res.redirect('/resenias');
                 });
             }
-           // else{
-                       
-           // }
+            else{
+                console.log
+            }
             
         })
     },
