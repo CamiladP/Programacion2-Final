@@ -40,4 +40,6 @@ router.post('/editarResena/:id', controllerSerion.editarResena);
 
 router.get('/editarResena/:id', controllerSerion.formularioEditarResena);
 
+router.get('/buscador/resultados', controllerSerion.resultadosBuscador);
+
 module.exports = router;

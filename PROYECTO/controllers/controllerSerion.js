@@ -20,6 +20,10 @@ let controllerSerion = {
         res.render("login")
     },
 
+    resultadosBuscador: function(req, res){
+        res.render("buscador")
+    },
+
     confirmaLogin: function(req,res){
         login.validar(req.body.email, req.body.password)
         .then (resultado =>{
