@@ -163,6 +163,27 @@ let controllerSerion = {
         })
     },
     
+    editarResena: function(req, res) {
+        // 1. validar al usuario
+        login.validar(req.body.email, req.body.password)
+        .then(function(user){
+            if (user){
+                const idresenia = req.params.id;
+                db.resenias.update({
+                    where: {
+                        id: idresenia
+                    }
+                }).then(function () {
+                    res.redirect('/resenias');
+                });
+            }
+            else{
+                console.log
+            }
+            
+        })
+    },
+
     guardarResenia: function(req, res){
         login.validar(req.body.email, req.body.password)
         .then (function(usuario){
@@ -223,6 +244,12 @@ let controllerSerion = {
     },
     formularioBorrarResena: (req, res) => {
         return res.render('borrarResenaForm', {
+            idResenia: req.params.id
+        })
+    },
+
+    formularioEditarResena: (req, res) => {
+        return res.render('editarResenaForm', {
             idResenia: req.params.id
         })
     }
