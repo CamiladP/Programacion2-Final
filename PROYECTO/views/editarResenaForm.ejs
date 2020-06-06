@@ -4,16 +4,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EDITAR</title>
+     <!--UIkit CSS -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />
+     <!--UIkit CSS-->
+     <script rel="stylesheet" src="./javascripts/series.js"></script>
+     <link rel="stylesheet" href="../stylesheets/editarResena.css">
+         <!--UIkit JS -->
+         <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit.min.js"></script>
+         <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js"></script>
+         <link rel="stylesheet" href="../stylesheets/editarResena.css">
+         <link rel="stylesheet" href="./css/uikit.min.css">
+         <link rel="stylesheet" href="./js/uikit.min.js">
+         <link rel="stylesheet" href="./js/uikit-icons.js">
+         <!--UIkit JS-->
 </head>
 <body>
-    <form action="/editarResena/<%= resultado.id %>" method="POST">
-        <input placeholder="email" type="text" name="email"> <br>
-        <input placeholder="password" type="password" name="password">
-        <input placeholder="Punataje" type="text" name="puntaje">
-        <input placeholder="Tu nueva reseña" type="text" name= "reseña" placeholder="<%= resultado.texto %>">
-        <button type="submit">Entrar</button>
-    </form>
+    <!-- Esta es la barra de navegacion -->
+    <nav class="uk-navbar-container" uk-navbar>
+        <div class="contenedorTitulos">
+          <div class="uk-navbar-left">
+              <ul class="uk-navbar-nav">
+                  <li class="uk-active"><a href='/'><img class="nav-logo" src="../images/serionlogo.jpg"></a></li>
+              </ul>
+          </div>
+          <div class="uk-navbar-center">
+              <ul class="uk-navbar-nav">
+                <li class="li-line">
+                  <a class="li-a" href='/'>Home</a>
+                </li>
+                  <li  class="li-line">
+                      <a class="li-a" href="#">Generos</a>
+                      <div class="uk-navbar-dropdown">
+                          <ul class="uk-nav uk-navbar-dropdown-nav gen">
+                          </ul>
+                      </div>
+                  </li>
+  
+                  <li class="li-line">
+                    <a class="li-a" href="/busquedaAvanzada">Buscador Avanzado</a>
+                  </li>
+                  <li class="li-line">
+                    <a class="li-a" href="/buscadorUsuarios">Buscador de Usuarios</a>
+                  </li>
+                  <li class="li-line">
+                    <a class="li-a" href="/registracion">Registrate</a>
+                  </li>
+                  <li class="li-line">
+                    <a class="li-a" href="/resenias">Mis Reseñas</a>
+                  </li>
+              </ul>
+          </div>
+          <div class="contenedorBuscador">
+            <form method="get" name="buscar" action="/buscador/resultados" class="buscar">
+                  <input class="uk-search-input casillero" name="buscador" type="search" placeholder="Search...">
+                  <span class="iconoBuscador" uk-search-icon></span>
+              </form>
+          </div>
+          </div>
+      </nav>
+      
+      <!-- Esta es la barra de navegacion -->
+      <div class="fondo">
+          <h1>EDITA TU RESEÑA</h1>
+
+          <form action="/editarResena/<%= resultado.id %>" method="POST">
+            <fieldset class="uk-fieldset">
+        
+               
+        
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" name="email" placeholder="Email...">
+                </div>
+                <div class="uk-margin">
+                    <input class="uk-input" type="password" name="password" placeholder="Tu contraseña...">
+                </div>
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" name="Puntaje" placeholder="Nuevo puntaje...">
+                </div>
+                <div class="uk-margin">
+                    <input class="uk-input" type="text" name="reseña" placeholder="Tu nueva reseña...">
+                </div>
+                <button class="uk-button uk-button-default" type="submit">Editar</button>
+            </fieldset>
+        </form>
+
+
+    
+</div>
+    <footer>
+        <div class="logo">
+          <img src="../images/293x302-powered-by-square-green-3ee4814bb59d8260d51efdd7c124383540fc04ca27d23eaea3a8c87bfa0f388d.png" alt="">
+        </div>
+
+    <p>Camila de Paul</p>
+    <p>Lola Marotta</p>
+    <p>Macarena Montoya</p>
+
+      </footer>
+      <!--FIN Footer-->
+<script type="text/javascript" src="./javascripts/validacionBuscador2.js"></script>
 </body>
 </html>
 
