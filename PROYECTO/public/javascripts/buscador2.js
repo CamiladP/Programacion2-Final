@@ -22,7 +22,7 @@ fetch("https://api.themoviedb.org/3/search/tv?api_key=a3f9467ae2c29b7ede89cca0ca
        for (var i = 0; i < arrayBusqueda.length; i++) {
          var png = arrayBusqueda[i].poster_path;
          var id = arrayBusqueda[i].id
-         document.querySelector(".ul-fotos").innerHTML += "<li class="+"li-item"+ "tabindex="+"0"+"><a href=detalleSerie.html?idPeli=" + id + "><img class="+"img-li"+" src=" + "https://image.tmdb.org/t/p/w185" +png+"></a>"
+         document.querySelector(".ul-fotos").innerHTML += "<li class="+"li-item"+ "tabindex="+"0"+"><a href=/series?idPeli=" + id + "><img class="+"img-li"+" src=" + "https://image.tmdb.org/t/p/w185" +png+"></a>"
        }
  })
  .catch(function(error) {

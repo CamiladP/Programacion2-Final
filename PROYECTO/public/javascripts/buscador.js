@@ -24,7 +24,7 @@ if (busqueda != null) {
 for (var i=0; i < arrayDeSeries.length; i++){
   if (arrayDeSeries[i].poster_path != null){
     li = "<li>"
-      li += "<a href='detalle.html?idPelicula="+arrayDeSeries[i].id+"'>"
+      li += "<a href='/series?idPelicula="+arrayDeSeries[i].id+"'>"
       li += "<p>" + arrayDeSeries[i].title + "</p>"
       li += "<img src = '" + urlImg + arrayDeSeries[i].poster_path + "' style='width:300px;'>"
       li += "</a>"
@@ -67,7 +67,7 @@ window.onload = function() {
                for (var i = 0; i < arrayBusqueda.length; i++) {
                  var png = arrayBusqueda[i].poster_path;
                  var id = arrayBusqueda[i].id
-                 document.querySelector(".ul-fotos").innerHTML += "<li class="+"li-item"+ "tabindex="+"0"+"><a href=detalleSerie.html?idPeli=" + id + "><img class="+"img-li"+" src=" + "https://image.tmdb.org/t/p/w185" +png+"></a>"
+                 document.querySelector(".ul-fotos").innerHTML += "<li class="+"li-item"+ "tabindex="+"0"+"><a href=/series?idPeli=" + id + "><img class="+"img-li"+" src=" + "https://image.tmdb.org/t/p/w185" +png+"></a>"
                }
          })
          .catch(function(error) {
@@ -86,7 +86,8 @@ fetch("https://api.themoviedb.org/3/search/tv?api_key=a3f9467ae2c29b7ede89cca0ca
        for (var i = 0; i < arrayBusqueda.length; i++) {
          var png = arrayBusqueda[i].poster_path;
          var id = arrayBusqueda[i].id
-         document.querySelector(".ul-fotos").innerHTML += "<li class="+"li-item"+ "tabindex="+"0"+"><a href=detalleSerie.html?idPeli=" + id + "><img class="+"img-li"+" src=" + "https://image.tmdb.org/t/p/w185" +png+"></a>"
+         document.querySelector(".ul-fotos").innerHTML += 
+         "<li class="+"li-item"+ "tabindex="+"0"+"><a href=/series?idPeli=" + id + "><img class="+"img-li"+" src=" + "https://image.tmdb.org/t/p/w185" +png+"></a>"
          //Intentamos hacer el link para que al clickear la foto nos mande a detalles pero no lo logramos. Programacion 1
        }
  })
