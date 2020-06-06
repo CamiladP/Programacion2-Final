@@ -103,6 +103,11 @@ let controllerSerion = {
         })
     },
 
+    
+
+
+
+
     // Para buscar usuarios
     buscadorUsuario: function(req, res){
         res.render("buscadorUsuarios")
