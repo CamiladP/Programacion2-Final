@@ -69,7 +69,8 @@
     <% for (let i = 0; i < resenias.length; i++) { %>
         <p>Puntaje: <%= resenias[i].puntaje %> </p>  
         <p> <%= resenias[i].texto %> </p>  
-        //<a href="/eliminarResenia/<%=resenias[i].id%>">Eliminar</a>
+        <a href="/eliminarResenia/<%=resenias[i].id%>">Eliminar</a>
+        <a href="/editarResena/<%=resenias[i].id%>">Editar</a>
         
 <% } %>
   <% } %>

@@ -167,18 +167,22 @@ let controllerSerion = {
         // 1. validar al usuario
         login.validar(req.body.email, req.body.password)
         .then(function(user){
-            if (user){
+            if (user != null){
                 const idresenia = req.params.id;
                 db.resenias.update({
+                    texto: req.body.reseña,
+                    puntaje: req.body.puntaje,
+                    fechaactualizacion: db.sequelize.literal("CURRENT_DATE")},
+                    {
                     where: {
                         id: idresenia
                     }
                 }).then(function () {
-                    res.redirect('/resenias');
+                    res.redirect('/');
                 });
             }
             else{
-                console.log
+                res.send("error")
             }
             
         })
@@ -249,9 +253,13 @@ let controllerSerion = {
     },
 
     formularioEditarResena: (req, res) => {
-        return res.render('editarResenaForm', {
-            idResenia: req.params.id
+        db.resenias.findByPk(req.params.id)
+        .then(resultado=>{
+            res.render('editarResenaForm', {
+                resultado: resultado
+            })
         })
+       
     }
 
 }
