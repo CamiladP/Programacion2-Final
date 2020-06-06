@@ -1,30 +1,26 @@
-body{
-  margin: 0px;
-}
-/* header */
-header{
+.contenedorTitulos{
   width: 100%;
   height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid #0C2440;
-  position: fixed;
   background-color: white;
   z-index: 3;
   border-bottom: 2px solid #0C2440;
 }
 
-.logo img{
-  max-width: 75px;
-}
-
-.logo{
-  margin-left: 20px;
-}
-
 .links{
-  margin-right: 50px;
+  text-decoration: none;
+  color: black;
+  letter-spacing: 1px;
+  margin-right: 10px;
+  border: 2px solid blue;
+  position: absolute;
+  left: 15vh;
+}
+
+.nav-logo{
+  max-width: 75px;
 }
 
 .links a{
@@ -38,19 +34,23 @@ header{
 position: absolute;
 right: 4vh;
 top: 3vh;
+border: 1px solid gray;
 }
 
 .buscar{
- border-radius: 40px;
- height: 4vh;
- justify-content: center;
- display: flex;
+  border-radius: 40px;
+  height: 4vh;
+  justify-content: center;
+  display: flex;
 }
 
 .iconoBuscador{
- color:white;
-   height: 8vh;
+  color:white;
+    height: 8vh;
 }
+
+/*header*/
+
 
 /* body */
 #main{
@@ -91,8 +91,8 @@ top: 3vh;
 
 
 
-/*footer */
-footer{
+ /* estilos del footer */
+ footer{
   width: 100%;
   color: #0C2440;
   height: 80px;
@@ -102,4 +102,12 @@ footer{
   align-items: center;
   margin-top: 10px;
   border-top: 2px solid #0C2440;
+}
+
+.logo img{
+  max-width: 75px;
+}
+
+.logo{
+  margin-left: 20px;
 }
