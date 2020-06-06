@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +10,10 @@
     <form action="/editarResena/<%= resultado.id %>" method="POST">
         <input placeholder="email" type="text" name="email"> <br>
         <input placeholder="password" type="password" name="password">
-        <input placeholder="Punatje" type="text" name="puntaje">
-        <input type="text" name= "reseña" placeholder="<%= resultado.texto %>">
+        <input placeholder="Punataje" type="text" name="puntaje">
+        <input placeholder="Tu nueva reseña" type="text" name= "reseña" placeholder="<%= resultado.texto %>">
         <button type="submit">Entrar</button>
     </form>
 </body>
 </html>
-=======
-<form action="/editarResena/<%= idResenia %>" method="post">
-    <input type="text" name="email"> <br>
-    <input type="password" name="password">
-    <input type="text" name="puntaje" placeholder="puntaje">
-    <input type="text" name= "reseña" placeholder="reseña">
-    <button type="submit">Entrar</button>
-</form>
->>>>>>> parent of a76db5f... Revert "resena"
+

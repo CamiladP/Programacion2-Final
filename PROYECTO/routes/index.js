@@ -37,10 +37,7 @@ router.get('/eliminarResenia/:id', controllerSerion.formularioBorrarResena);
 router.post('/eliminarResenia/:id', controllerSerion.eliminarResenia);
 
 router.post('/editarResena/:id', controllerSerion.editarResena);
-<<<<<<< HEAD
 
-=======
->>>>>>> parent of a76db5f... Revert "resena"
 router.get('/editarResena/:id', controllerSerion.formularioEditarResena);
 
 module.exports = router;
