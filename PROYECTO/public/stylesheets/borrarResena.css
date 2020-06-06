@@ -1,0 +1,102 @@
+.contenedorTitulos{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    z-index: 3;
+    border-bottom: 2px solid #0C2440;
+  }
+  
+  .links{
+    text-decoration: none;
+    color: black;
+    letter-spacing: 1px;
+    margin-right: 10px;
+    border: 2px solid blue;
+    position: absolute;
+    left: 15vh;
+  }
+  
+  .nav-logo{
+    max-width: 75px;
+  }
+  
+  .links a{
+    text-decoration: none;
+    color: black;
+    letter-spacing: 1px;
+    margin-right: 10px;
+  }
+  
+  .contenedorBuscador{
+  position: absolute;
+  right: 4vh;
+  top: 3vh;
+  border: 1px solid gray;
+  }
+  
+  .buscar{
+    border-radius: 40px;
+    height: 4vh;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .iconoBuscador{
+    color:white;
+      height: 8vh;
+  }
+  
+  /*header*/
+  .fondo{
+    height: 100vh;
+    background-image: url('../images/fondobuscador.jpg');
+    background-size: cover;
+    background-repeat: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    color: white;
+font-family: sans-serif;
+font-size: 3em;
+font-weight: bold;
+align-content: center;
+text-align: center;
+}
+
+h2{ 
+    color: white;
+font-family: sans-serif;
+font-size: 2em;
+font-weight: bold;
+align-content: center;
+text-align: center;
+}
+
+
+    /* estilos del footer */
+footer{
+    width: 100%;
+    color: #0C2440;
+    height: 80px;
+    display: flex;
+    background-color: white;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+    border-top: 2px solid #0C2440;
+  }
+  
+  .logo img{
+    max-width: 75px;
+  }
+  
+  .logo{
+    margin-left: 20px;
+  }
