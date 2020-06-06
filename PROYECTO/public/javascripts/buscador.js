@@ -39,7 +39,7 @@ for (var i=0; i < arrayDeSeries.length; i++){
 })
 
 }
-})
+
 
 //todo esto esta explicado en otros javas.
 window.onload = function() {
@@ -87,7 +87,7 @@ fetch("https://api.themoviedb.org/3/search/tv?api_key=a3f9467ae2c29b7ede89cca0ca
          var png = arrayBusqueda[i].poster_path;
          var id = arrayBusqueda[i].id
          document.querySelector(".ul-fotos").innerHTML += "<li class="+"li-item"+ "tabindex="+"0"+"><a href=detalleSerie.html?idPeli=" + id + "><img class="+"img-li"+" src=" + "https://image.tmdb.org/t/p/w185" +png+"></a>"
-         //Intentamos hacer el link para que al clickear la foto nos mande a detalles pero no lo logramos.
+         //Intentamos hacer el link para que al clickear la foto nos mande a detalles pero no lo logramos. Programacion 1
        }
  })
  .catch(function(error) {
