@@ -59,8 +59,19 @@
           </div>
       </nav>
       <!-- Esta es la barra de navegacion -->
+    
       <div class="fondo">
+        <div class="errores">
+          <% if(errores.length > 0) {%>
+            
+      <% for (let i = 0; i < errores.length; i++) { %>
+        <p> <%= errores[i] %> </p>  
+      <% } %>
+          <% } %>
+        </div>
     <h1>CREA TU USUARIO</h1>
+    
+
 
     <form action="/registracion" method="POST" class="formulario">
 

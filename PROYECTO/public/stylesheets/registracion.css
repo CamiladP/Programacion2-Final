@@ -73,6 +73,11 @@
     text-align: center;
     }
 
+    .errores{
+      color: white;
+      font-family: sans-serif;
+      font-weight: bold;
+    }
     .formulario{
         align-content: center;
         }

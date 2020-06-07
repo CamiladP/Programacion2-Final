@@ -89,36 +89,39 @@ let controllerSerion = {
     
 
     registracion: function(req, res){
-        res.render("registracion")
+        let errores=[]
+        res.render("registracion",{ errores: errores})
     },
 
 
     guardarRegistracion: function(req, res){
 // poner un then - function que me conecte con lo que traigo del formulario
 
-//let errores=[]
+        let errores=[]
 //console.log(req.body.)
 
- //if(!req.body.nombre){
-   //  errores.push ("No se han completado todos los campos correspondientes")
- //}
+     if(!req.body.nombre){
+        errores.push ("No se ha registrado tu nombre")
+     }
 
-// if(!req.body.email){
-  //  errores.push ("No se han completado todos los campos correspondientes")
-//}
-//if(!req.body.contrasenia){
-  //  errores.push ("No se han completado todos los campos correspondientes")
-//}
-//if(!req.body.fecha){
-  //  errores.push ("No se han completado todos los campos correspondientes")
-//}
+    if(!req.body.email){
+        errores.push ("No se ha registrado tu email")
+    }
 
-//if(!req.body.genero){
-  //  errores.push ("No se han completado todos los campos correspondientes")
-//}
+    if(!req.body.contrasenia){
+        errores.push ("No se ha registrado tu contraseña")
+    }
+    if(!req.body.fecha){
+        errores.push ("No se ha registrado tu fecha de nacimiento")
+    }
 
+    if(!req.body.genero){
+        errores.push ("No se ha registrado tu genero favorito")
+    }
 
-       // else {
+    if(errores.length == 0){
+    
+      
         let registro = { 
             nombre: req.body.nombre,
             email: req.body.email,
@@ -128,9 +131,13 @@ let controllerSerion = {
         }
         db.usuarios.create(registro)
         .then(()=> {
-            res.render("usuarioCreado")
+            res.render("usuarioCreado", { errores: errores})
+
         })
-   // }
+    } else{
+        res.render("registracion", { errores: errores})
+            
+    }
     },
 
 
