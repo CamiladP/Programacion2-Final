@@ -90,7 +90,7 @@ let controllerSerion = {
 
     registracion: function(req, res){
         let errores=[]
-        res.render("registracion",{ errores: errores})
+        res.render("registracion",{ errores: errores}) // DEFINIMOS ERRORES ACA, para la carga inicial de la pagina.
     },
 
 
