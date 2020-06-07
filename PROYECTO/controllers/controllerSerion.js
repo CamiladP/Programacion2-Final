@@ -96,29 +96,29 @@ let controllerSerion = {
     guardarRegistracion: function(req, res){
 // poner un then - function que me conecte con lo que traigo del formulario
 
-let errores=[]
-console.log(req.body.//formulario)
+//let errores=[]
+//console.log(req.body.)
 
- if(!req.body.nombre){
-     errores.push ("No se han completado todos los campos correspondientes")
- }
+ //if(!req.body.nombre){
+   //  errores.push ("No se han completado todos los campos correspondientes")
+ //}
 
- if(!req.body.email){
-    errores.push ("No se han completado todos los campos correspondientes")
-}
-if(!req.body.contrasenia){
-    errores.push ("No se han completado todos los campos correspondientes")
-}
-if(!req.body.fecha){
-    errores.push ("No se han completado todos los campos correspondientes")
-}
+// if(!req.body.email){
+  //  errores.push ("No se han completado todos los campos correspondientes")
+//}
+//if(!req.body.contrasenia){
+  //  errores.push ("No se han completado todos los campos correspondientes")
+//}
+//if(!req.body.fecha){
+  //  errores.push ("No se han completado todos los campos correspondientes")
+//}
 
-if(!req.body.genero){
-    errores.push ("No se han completado todos los campos correspondientes")
-}
+//if(!req.body.genero){
+  //  errores.push ("No se han completado todos los campos correspondientes")
+//}
 
 
-        else {
+       // else {
         let registro = { 
             nombre: req.body.nombre,
             email: req.body.email,
@@ -130,7 +130,7 @@ if(!req.body.genero){
         .then(()=> {
             res.render("usuarioCreado")
         })
-    }
+   // }
     },
 
 
