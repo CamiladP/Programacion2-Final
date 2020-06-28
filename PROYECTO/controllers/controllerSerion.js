@@ -131,11 +131,11 @@ let controllerSerion = {
         }
         db.usuarios.create(registro)
         .then(()=> {
-            res.render("usuarioCreado", { errores: errores})
+            res.render("usuarioCreado", { errores: errores}) // no me olvido de definir el error aca
 
         })
     } else{
-        res.render("registracion", { errores: errores})
+        res.render("registracion", { errores: errores}) // no me olvido de definir el error aca
             
     }
     },
@@ -179,7 +179,7 @@ let controllerSerion = {
              .then(function(resultados){
                 res.render("detallesUsuarios", {
                     usuario: user,
-                    resenia: resultados,
+                    resenia: resultados, // todos estos datos estan registrados en nuestra db
                 })
              })
          })
